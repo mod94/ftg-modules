@@ -27,11 +27,11 @@ logger = logging.getLogger(__name__)
 
 
 def register(cb):
-    cb(Tagm())
+    cb(TagMod())
 
 
 @loader.tds
-class Tagm(loader.Module):
+class TagMod(loader.Module):
     """
     Tag :
     -> Tag all admins (fast way to report).
