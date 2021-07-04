@@ -224,11 +224,6 @@ def generate(word_count: int, caps_rate: int, name: str):
 
 logger = logging.getLogger(__name__)
 
-def register(cb):
-     return cb(Tralka())
-
-
-
 class Tralka(loader.Module):
     """Generates pastes"""
 
