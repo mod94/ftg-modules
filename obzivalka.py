@@ -225,7 +225,7 @@ def generate(word_count: int, caps_rate: int, name: str):
 logger = logging.getLogger(__name__)
 
 class Tralka(loader.Module):
-    """Generates pastes"""
+    """Generates pastes""" 
 
     def __init__(self):
         self.name = ("Pastes")
