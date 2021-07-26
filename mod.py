@@ -1,6 +1,6 @@
 import asyncio
 import telethon
-from telethon.tl.types import channelParticipantsRecent
+from telethon.tl.types import *
 from .. import loader, utils
 
 
