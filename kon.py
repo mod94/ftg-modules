@@ -7,7 +7,7 @@ from userbot import CMD_HELP, ZALG_LIST
 from userbot.events import register
 
 @register(outgoing=True, pattern='^.kon(?: |$)(.*)')
-async def typewriter(typew):
+async def konwriter(typew):
 	message = typew.pattern_match.group(1)
 	await typew.edit("Начинаю воровать коня...")
 	sleep(1)
