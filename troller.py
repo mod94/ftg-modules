@@ -1,3 +1,4 @@
+
 from .. import loader, utils
 import logging
 import asyncio
@@ -50,7 +51,13 @@ class TrolerMod(loader.Module):
         i = 0
         size = 1 if sleepy else 100
         while i < count:
-            # TODO localisation?
+            await asyncio.gather(*[message.respond(insult()) for x in range(min(count, size))])
+            await asyncio.sleep(sleepy)
+            i += size
+        await self.allmodules.log("spam", group=message.to_id, data=spam.message + " (" + str(count) + ")")
+
+    def insult():
+                    # TODO localisation?
             adjectives_start = ["сучий", "жирный", "ебаный", "обосраный", "глупый", "безмозглый"]
             adjectives_mid = ["мелкий", "ушибленый"]
             nouns = ["псина", "свинья", "педофил", "недомальчик", "униженый", "обиженый", "жополиз", "яйцеглот",
@@ -64,7 +71,4 @@ class TrolerMod(loader.Module):
             noun = random.choice(nouns)
             end = random.choice(ends)
             insult = start + " " + adjective_start + " " + adjective_mid + (" " if adjective_mid else "") + noun + end
-            await asyncio.gather(*[message.respond(insult) for x in range(min(count, size))])
-            await asyncio.sleep(sleepy)
-            i += size
-        await self.allmodules.log("spam", group=message.to_id, data=spam.message + " (" + str(count) + ")")
+            return insult
