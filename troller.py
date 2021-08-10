@@ -10,6 +10,21 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class TrolerMod(loader.Module):
+    def insult():
+        adjectives_start = ["сучий", "жирный", "ебаный", "обосраный", "глупый", "безмозглый"]
+        adjectives_mid = ["мелкий", "ушибленый"]
+        nouns = ["псина", "свинья", "педофил", "недомальчик", "униженый", "обиженый", "жополиз", "яйцеглот",
+                 "ХУЙ", "залупа", "далюаеб", "мамкаеб", "пиздолиз", "хуесос"]
+        starts = ["Слыш ты", "Ты", "Завали ебало ты", "Cлушай сюда ты",
+                  "Да что блядь с тобой, ты"]
+        ends = ["!!!!", "!", ""]
+        start = random.choice(starts)
+        adjective_start = random.choice(adjectives_start)
+        adjective_mid = random.choice(adjectives_mid)
+        noun = random.choice(nouns)
+        end = random.choice(ends)
+        insult = start + " " + adjective_start + " " + adjective_mid + (" " if adjective_mid else "") + noun + end
+        return insult
     """Annoys people really effectively"""
     strings = {"name": "Spam",
                "need_spam": "<b>U wot? I need something to spam.</b>",
@@ -55,19 +70,3 @@ class TrolerMod(loader.Module):
             await asyncio.sleep(sleepy)
             i += size
         await self.allmodules.log("spam", group=message.to_id, data=spam.message + " (" + str(count) + ")")
-
-    def insult():
-        adjectives_start = ["сучий", "жирный", "ебаный", "обосраный", "глупый", "безмозглый"]
-        adjectives_mid = ["мелкий", "ушибленый"]
-        nouns = ["псина", "свинья", "педофил", "недомальчик", "униженый", "обиженый", "жополиз", "яйцеглот",
-                 "ХУЙ", "залупа", "далюаеб", "мамкаеб", "пиздолиз", "хуесос"]
-        starts = ["Слыш ты", "Ты", "Завали ебало ты", "Cлушай сюда ты",
-                  "Да что блядь с тобой, ты"]
-        ends = ["!!!!", "!", ""]
-        start = random.choice(starts)
-        adjective_start = random.choice(adjectives_start)
-        adjective_mid = random.choice(adjectives_mid)
-        noun = random.choice(nouns)
-        end = random.choice(ends)
-        insult = start + " " + adjective_start + " " + adjective_mid + (" " if adjective_mid else "") + noun + end
-        return insult
