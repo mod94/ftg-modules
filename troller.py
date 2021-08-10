@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class TrolerMod(loader.Module):
-    def insult():
+    def insult(self):
         adjectives_start = ["сучий", "жирный", "ебаный", "обосраный", "глупый", "безмозглый"]
         adjectives_mid = ["мелкий", "ушибленый"]
         nouns = ["псина", "свинья", "педофил", "недомальчик", "униженый", "обиженый", "жополиз", "яйцеглот",
