@@ -23,8 +23,8 @@ class TrolerMod(loader.Module):
         adjective_mid = random.choice(adjectives_mid)
         noun = random.choice(nouns)
         end = random.choice(ends)
-        insult = start + " " + adjective_start + " " + adjective_mid + (" " if adjective_mid else "") + noun + end
-        return insult
+        insulter = start + " " + adjective_start + " " + adjective_mid + (" " if adjective_mid else "") + noun + end
+        return insulter
     """Annoys people really effectively"""
     strings = {"name": "Spam",
                "need_spam": "<b>U wot? I need something to spam.</b>",
@@ -70,3 +70,5 @@ class TrolerMod(loader.Module):
             await asyncio.sleep(sleepy)
             i += size
         await self.allmodules.log("spam", group=message.to_id, data=spam.message + " (" + str(count) + ")")
+
+
