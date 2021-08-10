@@ -66,7 +66,7 @@ class TrolerMod(loader.Module):
         i = 0
         size = 1 if sleepy else 100
         while i < count:
-            await asyncio.gather(*[message.respond(insult()) for x in range(min(count, size))])
+            await asyncio.gather(*[message.respond(self.insult()) for x in range(min(count, size))])
             await asyncio.sleep(sleepy)
             i += size
         await self.allmodules.log("spam", group=message.to_id, data=spam.message + " (" + str(count) + ")")
