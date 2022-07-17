@@ -1,4 +1,3 @@
-#https://github.com/Daniel3k00/ftg-modules/blob/master/DUsers.py
 from .. import loader, utils
 import os
 def register(cb):
@@ -36,7 +35,7 @@ class DUsersMod(loader.Module):
 			await message.edit("🖤Дампим чат...🖤")
 		else:
 			await message.delete()
-		f = open(f"dump-{str(message.to_id)}.txt", "w")
+		f = open(f"dump-{str(message.to_id)}.txt", "w",encoding='utf-8')
 		f.write("FNAME;LNAME;USER;ID;NUMBER\n")
 		me = await message.client.get_me()
 		for i in await message.client.get_participants(message.to_id):
