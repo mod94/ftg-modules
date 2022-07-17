@@ -22,7 +22,7 @@ class DUsersMod(loader.Module):
 		"""
 		num = False
 		silent = False
-		tome = False
+		tome = True
 		if(utils.get_args_raw(message)):
 			a = utils.get_args_raw(message)
 			if("n" in a):
@@ -47,7 +47,7 @@ class DUsersMod(loader.Module):
 				f.write(f"{str(i.first_name)};{str(i.last_name)};{str(i.username)};{str(i.id)};{str(i.phone)}\n")
 		f.close()
 		if tome:
-			await message.client.send_file('me', f"dump-{str(message.to_id)}.txt", caption="Дамп чата " + str(message.to_id))
+			await message.client.send_file('me', f"dump-{str(message.to_id)}.txt", caption="Дамп чата " + f"dump-{str(message.to_id)}.txt")
 		else:
 			await message.client.send_file(message.to_id, f"dump-{str(message.to_id)}.txt", caption="Дамп чата " + str(message.to_id))
 		if silent == False:
