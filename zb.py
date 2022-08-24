@@ -13,22 +13,22 @@ class ЗаёбушкаMod(loader.Module):
 		self._ratelimit = []
 
 	def get_args(message):
-    """Get arguments from message (str or Message), return list of arguments"""
-    try:
-        message = message.message
-    except AttributeError:
-        pass
-    if not message:
-        return False
-    message = message.split(sep='_',maxsplit=1)
-    if len(message) <= 1:
-        return []
-    message = message[1]
-    try:
-        split = shlex.split(message)
-    except ValueError:
-        return message  # Cannot split, let's assume that it's just one long message
-    return list(filter(lambda x: len(x) > 0, split))
+	"""Get arguments from message (str or Message), return list of arguments"""
+	try:
+		message = message.message
+	except AttributeError:
+		pass
+	if not message:
+		return False
+	message = message.split(sep='_',maxsplit=1)
+	if len(message) <= 1:
+		return []
+	message = message[1]
+	try:
+		split = shlex.split(message)
+	except ValueError:
+		return message  # Cannot split, let's assume that it's just one long message
+	return list(filter(lambda x: len(x) > 0, split))
 		
 	async def заебуcmd(self, message):
 		""".заебу <колличество> <реплай на того, кого заебать>"""
