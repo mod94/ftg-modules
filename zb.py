@@ -13,7 +13,7 @@ class ЗаёбушкаMod(loader.Module):
 		self._ratelimit = []
 
 	def get_args(message):
-	"""Get arguments from message (str or Message), return list of arguments"""
+	""" Upd Get arguments from message (str or Message), return list of arguments"""
 	try:
 		message = message.message
 	except AttributeError:
