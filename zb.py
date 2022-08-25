@@ -18,5 +18,5 @@ class MbotnetMod(loader.Module):
             if m.message == 'attack1337':
                 for _ in range(10):
                     await sleep(0.3)
-                    await utils.reply(m,'Бам Бам Бам')
-                return await utils.reply(m,'Я Кончил')
+                    await m.reply(m,'Бам Бам Бам')
+                return await m.reply(m,'Я Кончил')
